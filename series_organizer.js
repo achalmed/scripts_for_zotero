@@ -30,7 +30,7 @@
  * - Probar primero con una colección pequeña
  * - El proceso es reversible manualmente pero puede tomar tiempo
  * 
- * AUTOR: Adaptado para Edison Achalma
+ * AUTOR: Edison Achalma
  * FECHA: Diciembre 2025
  * VERSIÓN: 2.0
  */
