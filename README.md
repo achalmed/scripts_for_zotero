@@ -2,6 +2,8 @@
 
 ![Zotero](https://img.shields.io/badge/Zotero-6%2B%20&%207-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow) ![license](https://img.shields.io/github/license/tu-usuario/zotero-power-tools)
 
+#readme
+
 **Cuatro scripts ultraútiles** para limpiar, normalizar y organizar automáticamente tu biblioteca de Zotero.  
 Ejecútalos desde **Herramientas → Desarrollador → Ejecutar JavaScript** (Run JavaScript).
 
