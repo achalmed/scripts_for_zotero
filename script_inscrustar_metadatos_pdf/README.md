@@ -1,4 +1,4 @@
-# Zotero PDF Metadata Embedder — v5.0
+# Zotero PDF Metadata Embedder — v8.0
 
 Sistema de dos scripts para exportar metadatos de Zotero e incrustarlos
 directamente en los archivos PDF de tu biblioteca, sin alterar el contenido
@@ -528,6 +528,8 @@ bash ~/embed_pdf_metadata.sh --log ~/zotero_embed.log ../../../Documents/bibliot
 # Verificar un PDF después
 exiftool -Title -Author -Keywords -XMP-dc:Creator "/ruta/al/archivo.pdf"
 ```
+
+Nuevo modo --repair-only: repara los PDFs malformados sin tocar metadatos, útil para limpiar la biblioteca primero.
 
 ---
 
