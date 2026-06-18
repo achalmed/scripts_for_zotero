@@ -1,3 +1,4 @@
+#readme
 # Zotero PDF Metadata Embedder — v8.0
 
 Sistema de dos scripts para exportar metadatos de Zotero e incrustarlos
