@@ -7,7 +7,7 @@
 > (swap ciego de autores: rompe la comparación semántica y dispara escrituras masivas de
 > conflicto). `capitalizar_tags` y `traducir_tags` chocan con la política de vocabulario
 > "Calibre manda". El incrustador de PDF se consolida en `script_metadatos_calibre`
-> (PLAN_MIGRACION fase 2 de `~/Documents/ecosistema/`). Contrato global: `~/Documents/ecosistema/ARQUITECTURA.md`.
+> (PLAN_MIGRACION fase 2 de `~/Documents/meta/`). Contrato global: `~/Documents/meta/ARQUITECTURA.md`.
 
 
 ![Zotero](https://img.shields.io/badge/Zotero-6%2B%20&%207-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow) ![license](https://img.shields.io/github/license/tu-usuario/zotero-power-tools)
