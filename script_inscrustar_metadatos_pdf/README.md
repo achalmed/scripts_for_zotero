@@ -1,6 +1,23 @@
 #readme
 # Zotero PDF Metadata Embedder — v8.0
 
+<!-- suite:inicio -->
+**Suite `inscrustar_metadatos_pdf`** · objetivo *biblioteca* · estado *deprecado* · - · interfaz cli
+
+Exporta metadatos de Zotero (JS) y los incrusta en los PDF; sustituido por metadatos_calibre (incrustador único con XMP).
+
+- Escribe en: archivos · simula por defecto: no
+- Nota: scripts_for_zotero está deprecado; se conserva como historia
+
+Comandos:
+
+```bash
+bash embed_pdf_metadata.sh <carpeta>
+```
+
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-07); no se edita a mano.</sub>
+<!-- suite:fin -->
+
 Sistema de dos scripts para exportar metadatos de Zotero e incrustarlos
 directamente en los archivos PDF de tu biblioteca, sin alterar el contenido
 de los documentos.

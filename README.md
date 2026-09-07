@@ -1,5 +1,15 @@
 # Zotero Power Tools – Scripts en JavaScript (Run JavaScript)
 
+<!-- suites:inicio -->
+Suites de esta carpeta (1); índice global en `meta/INDICE_SCRIPTS.md`. Patrón: M main · C config · L lib.
+
+| Suite | Carpeta | Objetivo | Escribe en | Simula | Timer | Estado | Patrón |
+|---|---|---|---|---|---|---|---|
+| `inscrustar_metadatos_pdf` | [scripts_for_zotero/script_inscrustar_metadatos_pdf](script_inscrustar_metadatos_pdf/) | biblioteca | archivos | no |  | deprecado | `···` |
+
+<sub>Bloque generado desde los `suite.yml` por `core/suites.py generar` (2026-09-07); no se edita a mano.</sub>
+<!-- suites:fin -->
+
 > ⚠️ **REPO DEPRECADO (auditoría 2026-08-09, hallazgo A3)** — salvo `series_organizer`.
 > Estas herramientas fueron **absorbidas** por `scripts_for_calibre/script_sincronizar_zotero`
 > (ver su README §"scripts JS absorbidos"): ejecutarlas hoy reintroduce divergencia y el

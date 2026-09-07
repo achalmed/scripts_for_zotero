@@ -1,0 +1,11 @@
+# suite.yml — contrato de la suite (esquema en core/suite.schema.yml); core/suites.py generar escribe los índices y READMEs.
+nombre: inscrustar_metadatos_pdf
+objetivo: biblioteca
+resumen: Exporta metadatos de Zotero (JS) y los incrusta en los PDF; sustituido por metadatos_calibre (incrustador único con XMP).
+escribe_en:
+- archivos
+simula_por_defecto: false
+comandos:
+- bash embed_pdf_metadata.sh <carpeta>
+estado: deprecado
+nota: scripts_for_zotero está deprecado; se conserva como historia
