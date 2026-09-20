@@ -7,7 +7,7 @@ Suites de esta carpeta (1); índice global en `meta/INDICE_SCRIPTS.md`. Patrón:
 |---|---|---|---|---|---|---|---|
 | `inscrustar_metadatos_pdf` | [scripts_for_zotero/script_inscrustar_metadatos_pdf](script_inscrustar_metadatos_pdf/) | biblioteca | archivos | no |  | retirado | `···` |
 
-<sub>Bloque generado desde los `suite.yml` por `core/suites.py generar` (2026-09-15); no se edita a mano.</sub>
+<sub>Bloque generado desde los `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
 <!-- suites:fin -->
 
 > ⚠️ **REPO DEPRECADO (auditoría 2026-08-09, hallazgo A3)** — salvo `series_organizer`.
