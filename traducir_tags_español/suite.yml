@@ -1,0 +1,14 @@
+# traducir_tags_español/suite.yml — suite traducir_tags_español: Traducía al español por diccionario las etiquetas en inglés de los ítems seleccionados de Zotero (script «Run JavaScript»); retirado, absorbido por sincronizar_zotero.
+# Contrato: core/suite.schema.yml; core/suites.py validar lo comprueba y generar escribe los índices y README.
+id: traducir_tags_español
+objetivo: biblioteca
+resumen: Traducía al español por diccionario las etiquetas en inglés de los ítems seleccionados de Zotero (script «Run JavaScript»); retirado, absorbido por sincronizar_zotero.
+escribe_en:
+- zotero
+simula_por_defecto: false
+comandos:
+- 'cat traducir_tags_español.js   # solo lectura: retirado, no pegar en Zotero'
+estado: retirado
+depende_de:
+- zotero
+nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): el vocabulario de etiquetas lo fija Calibre y lo propaga scripts_for_calibre/script_sincronizar_zotero («Calibre manda»), que la sustituye; se conserva como historia'

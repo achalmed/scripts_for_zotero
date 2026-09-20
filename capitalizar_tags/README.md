@@ -1,4 +1,28 @@
-# Capitalizar Tags — Script para Zotero
+---
+tipo: readme
+estado: retirado
+---
+# capitalizar_tags/ — etiquetas de Zotero a Título Capitalizado (script «Run JavaScript», retirado)
+
+<!-- suite:inicio -->
+**Suite `capitalizar_tags`** · objetivo *biblioteca* · estado *retirado* · - · interfaz cli
+
+Ponía las etiquetas de los ítems seleccionados de Zotero en Título Capitalizado (script «Run JavaScript»); retirado, absorbido por sincronizar_zotero.
+
+- Escribe en: zotero · simula por defecto: no
+- Depende de: zotero
+- Nota: retirado el 2026-08-09 (auditoría, hallazgo A3): choca con la política de vocabulario «Calibre manda» de scripts_for_calibre/script_sincronizar_zotero, que la sustituye; se conserva como historia
+
+Comandos:
+
+```bash
+cat capitalizar_tags.js   # solo lectura: retirado, no pegar en Zotero
+```
+
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
+<!-- suite:fin -->
+
+> ⚠️ **Retirado el 2026-08-09** (auditoría, hallazgo A3 de `meta/diagnosticos/AUDITORIA.md`): choca con la política de vocabulario «Calibre manda» de `scripts_for_calibre/script_sincronizar_zotero`, que la sustituye; ejecutarlo reintroduce divergencia que el sync nocturno revierte. No pegar en Zotero; se conserva como historia.
 
 Script de JavaScript para Zotero que **capitaliza automáticamente los tags
 (etiquetas)** de los ítems seleccionados: pone en mayúscula la primera letra

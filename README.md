@@ -1,98 +1,91 @@
-# Zotero Power Tools – Scripts en JavaScript (Run JavaScript)
+---
+tipo: readme
+estado: activo
+---
+# scripts_for_zotero/ — scripts «Run JavaScript» para Zotero, repo retirado salvo `series_organizer`
 
 <!-- suites:inicio -->
-Suites de esta carpeta (1); índice global en `meta/INDICE_SCRIPTS.md`. Patrón: M main · C config · L lib.
+Suites de esta carpeta (5); índice global en `meta/INDICE_SCRIPTS.md`. Patrón: M main · C config · L lib.
 
 | Suite | Carpeta | Objetivo | Escribe en | Simula | Timer | Estado | Patrón |
 |---|---|---|---|---|---|---|---|
+| `capitalizar_tags` | [scripts_for_zotero/capitalizar_tags](capitalizar_tags/) | biblioteca | zotero | no |  | retirado | `···` |
+| `invertir_nombres` | [scripts_for_zotero/invertir_nombres](invertir_nombres/) | biblioteca | zotero | no |  | retirado | `···` |
 | `inscrustar_metadatos_pdf` | [scripts_for_zotero/script_inscrustar_metadatos_pdf](script_inscrustar_metadatos_pdf/) | biblioteca | archivos | no |  | retirado | `···` |
+| `series_organizer` | [scripts_for_zotero/series_organizer](series_organizer/) | biblioteca | zotero | no |  | activo | `···` |
+| `traducir_tags_español` | [scripts_for_zotero/traducir_tags_español](traducir_tags_español/) | biblioteca | zotero | no |  | retirado | `···` |
 
 <sub>Bloque generado desde los `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
 <!-- suites:fin -->
 
-> ⚠️ **REPO DEPRECADO (auditoría 2026-08-09, hallazgo A3)** — salvo `series_organizer`.
-> Estas herramientas fueron **absorbidas** por `scripts_for_calibre/script_sincronizar_zotero`
-> (ver su README §"scripts JS absorbidos"): ejecutarlas hoy reintroduce divergencia y el
-> sync nocturno la revierte o la amplifica. En particular **NO ejecutar `invertir_nombres.js`**
-> (swap ciego de autores: rompe la comparación semántica y dispara escrituras masivas de
-> conflicto). `capitalizar_tags` y `traducir_tags` chocan con la política de vocabulario
-> "Calibre manda". El incrustador de PDF se consolida en `script_metadatos_calibre`
-> (PLAN_MIGRACION fase 2 de `~/Documents/meta/`). Contrato global: `~/Documents/meta/ARQUITECTURA.md`.
+> ⚠️ **REPO RETIRADO (auditoría 2026-08-09, hallazgo A3 de `meta/diagnosticos/AUDITORIA.md`), salvo
+> `series_organizer`.** Las transformaciones de etiquetas y de nombres fueron **absorbidas** por
+> `scripts_for_calibre/script_sincronizar_zotero` (su README, §«Herramientas relacionadas»): ejecutarlas
+> hoy reintroduce divergencia y el sync nocturno (`ecosistema-metadatos.timer`, 04:30) la revierte o la
+> amplifica. En particular **NO ejecutar `invertir_nombres/invertir_nombres.js`**: intercambio ciego de
+> nombre y apellido que rompe la comparación semántica de autores del sync y dispara escrituras masivas de
+> conflicto. `capitalizar_tags` y `traducir_tags_español` chocan con la política de vocabulario «Calibre
+> manda». El incrustador de PDF (`script_inscrustar_metadatos_pdf`) se consolidó en
+> `scripts_for_calibre/script_metadatos_calibre` (hallazgo A7, `meta/diagnosticos/PLAN_MIGRACION.md`).
 
+## Qué es
 
-![Zotero](https://img.shields.io/badge/Zotero-6%2B%20&%207-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow) ![license](https://img.shields.io/github/license/tu-usuario/zotero-power-tools)
+Cinco carpetas con scripts que se pegan en la consola de Zotero (Herramientas → Desarrollador →
+Ejecutar JavaScript) para limpiar y organizar la biblioteca de referencias, y un incrustador Bash de
+metadatos en PDF. Nacieron en 2024–2025, antes de que existiera la sincronización Calibre ⇄ Zotero;
+desde el 2026-08-09 solo `series_organizer/` sigue en uso, como organizador de subcolecciones **después**
+de cada sync. El resto se conserva como historia, con su `suite.yml` en `estado: retirado` y el
+sustituto declarado en cada carpeta.
 
-#readme
+**No es** parte del flujo del ecosistema: nada aquí corre por timer ni lo invoca otra suite. La verdad
+de los metadatos vive en Calibre (`biblioteca/`) y llega a Zotero por
+`scripts_for_calibre/script_sincronizar_zotero`; el contrato global está en `meta/MODELO_METADATOS.md`
+y `meta/SINCRONIZACION.md`. Depende solo de `core/` para el contrato de suites (`meta/workspace.yml`).
 
-**Cuatro scripts ultraútiles** para limpiar, normalizar y organizar automáticamente tu biblioteca de Zotero.  
-Ejecútalos desde **Herramientas → Desarrollador → Ejecutar JavaScript** (Run JavaScript).
+## Uso
 
-| # | Nombre del script | ¿Qué hace? | Ideal para… |
-|---|-------------------|------------|-------------|
-| 1 | `capitalize-tags.js` | Convierte todas las etiquetas seleccionadas a **Título Capitalizado** (Primera Letra Mayúscula) | Tener etiquetas perfectamente formateadas en segundos |
-| 2 | `translate-tags-to-spanish.js` | Traduce automáticamente cientos de etiquetas del inglés al español (diccionario ampliable). Guarda en un .txt las que no pudo traducir | Bibliotecas bilingües o importadas desde fuentes en inglés |
-| 3 | `swap-first-last-name.js` | Intercambia nombre ↔ apellido en todos los autores/editores de los ítems seleccionados | Cuando Zotero o un importador (RIS, BibTeX, etc.) invirtió los campos |
-| 4 | `organize-by-series.js` | Crea subcolecciones automáticas dentro de una colección (ej: “Calibre”) usando el campo **Series** y mueve los libros a su sitio correspondiente | Organizar colecciones enormes de sagas, cursos, editoriales, etc. |
+Solo `series_organizer`; los demás scripts no se ejecutan (ver el aviso de arriba).
 
-## Cómo usarlos (todos funcionan igual)
-
-1. Abre Zotero  
-2. Selecciona los ítems que quieras procesar (o nada si el script no lo requiere)  
-3. Ve a **Herramientas → Desarrollador → Ejecutar JavaScript**  
-4. Pega el contenido completo del script que necesites  
-5. Haz clic en **Run**  
-6. ¡Listo! El resultado aparece en la ventana y en la consola
-
-> **Consejo:** Antes de ejecutar masivamente, prueba siempre con 5–10 ítems y haz una copia de seguridad de tu biblioteca (Archivo → Exportar biblioteca → Zotero RDF con archivos).
-
-## Detalle de cada script
-
-### 1. capitalize-tags.js – Etiquetas en Título Capitalizado
-```js
-// Ejemplo: "machine learning" → "Machine Learning"
-//         "DATA analysis"    → "Data Analysis"
-```
-- Procesa en lotes de 100 ítems (muy rápido incluso con miles)
-- No toca la fecha de modificación
-- Solo modifica etiquetas que realmente cambian
-
-### 2. translate-tags-to-spanish.js – Traductor automático de etiquetas
-- Diccionario con más de 70 términos comunes (fácil de ampliar)
-- Evita duplicados (si ya existe la versión en español, elimina la inglesa)
-- Guarda automáticamente un archivo `untranslated_tags.txt` en tu perfil de Zotero con las etiquetas que no encontró (para que las añadas al diccionario)
-
-### 3. swap-first-last-name.js – Intercambio masivo de nombres y apellidos
-```js
-// Antes:  firstName: "García Márquez" | lastName: "Gabriel"
-// Después: firstName: "Gabriel"       | lastName: "García Márquez"
-```
-- Mensaje final súper detallado con estadísticas
-- Ignora autores que solo tienen un campo
-- 100 % transaccional y con logs claros
-
-### 4. organize-by-series.js – Organizador automático por Series (v2.0 corregida)
-- Crea subcolecciones dentro de “Calibre” (o la colección que indiques)
-- Mueve los libros a su serie correspondiente
-- Modo simulación (`modoSimulacion: true`) para ver qué haría sin tocar nada
-- Opción de mantener los ítems también en la colección padre
-- Logs extremadamente detallados y verificación final
-
-```js
-// Cambia estas líneas al inicio del script:
-nombreColeccionPrincipal: "Calibre",   // ← tu colección
-modoSimulacion: false,                // ← false para aplicar cambios
-mantenerEnColeccionPrincipal: false   // ← true si quieres duplicados
+```bash
+cat series_organizer/series_organizer.js | xclip -selection clipboard   # copiar el script al portapapeles
 ```
 
-## Licencia
+1. En Zotero: **Herramientas → Desarrollador → Ejecutar JavaScript**, pegar el script.
+2. Revisar el bloque `CONFIG` al inicio: `nombreColeccionPrincipal` (por defecto `"Calibre"`),
+   `modoSimulacion` (**ponerlo en `true` la primera vez**: solo muestra qué haría), `limitePrueba`
+   (por ejemplo `10` para un ensayo real acotado), `mantenerEnColeccionPrincipal`.
+3. **Run**. El detalle de las cuatro fases sale en la consola; el resumen final, en la ventana.
+4. Copia de seguridad antes de una pasada real (Archivo → Exportar biblioteca → Zotero RDF con archivos).
 
-**MIT License** – úsalos, modifícalos y compártelos libremente.
+## Estructura
 
-## Autor
+| carpeta | qué es | estado / sustituto |
+|---|---|---|
+| `series_organizer/` | `series_organizer.js` (v2.0): subcolecciones por el campo *Series* dentro de una colección | activo; el único en uso |
+| `capitalizar_tags/` | `capitalizar_tags.js`: etiquetas a Título Capitalizado | retirado → política de vocabulario de `script_sincronizar_zotero` |
+| `traducir_tags_español/` | `traducir_tags_español.js`: etiquetas inglés → español por diccionario | retirado → `script_sincronizar_zotero` (Calibre manda) |
+| `invertir_nombres/` | `invertir_nombres.js`: intercambio nombre ↔ apellido | retirado y **peligroso**; el sync compara autores por tokens y tolera la inversión |
+| `script_inscrustar_metadatos_pdf/` | `zotero_export_metadata.js` + `embed_pdf_metadata.sh` (v8.0) | retirado → `scripts_for_calibre/script_metadatos_calibre` |
+| `suite.yml` (uno por carpeta) | manifiesto (`core/suite.schema.yml`); los bloques de README los genera `core/suites.py generar --aplicar` | a mano |
 
-Edison Achalma – 2024-2025  
-Hecho con mucho cariño para la comunidad hispanohablante de Zotero
+## Documentación
 
----
+| documento | para qué leerlo |
+|---|---|
+| `CLAUDE.md` | qué está vivo, qué no se ejecuta y por qué, cómo se verifica |
+| `series_organizer/README.md` | opciones de `CONFIG`, fases del script, precauciones |
+| `scripts_for_calibre/script_sincronizar_zotero/README.md` | la política que absorbió a estos scripts |
+| `meta/diagnosticos/AUDITORIA.md` | hallazgos A3 (repo retirado) y A7 (un solo incrustador) |
+| `meta/INDICE_SCRIPTS.md` | las 5 suites entre las del workspace (generado) |
 
-**¡Dale una estrella si estos scripts te ahorran horas de trabajo manual!**
+## Límite honesto
+
+- **Sin línea de comandos ni simulación fuera de Zotero**: un script se ejecuta pegándolo en la consola;
+  la única «simulación» es `modoSimulacion: true` de `series_organizer`, y solo ahí.
+- **Todo escribe en `zotero.sqlite` a través de la API de Zotero**, sin backup automático: la copia de
+  seguridad es manual y previa.
+- **`series_organizer` mueve ítems, no los copia** (salvo `mantenerEnColeccionPrincipal: true`), una
+  transacción por ítem: lento en bibliotecas grandes; reversible solo a mano.
+- **Los cuatro scripts retirados no se mantienen ni se prueban** contra versiones nuevas de Zotero; se
+  conservan por historia y para leer qué lógica aplicaban.
+- Licencia MIT declarada en el remoto público; no hay archivo `LICENSE` en el repo.

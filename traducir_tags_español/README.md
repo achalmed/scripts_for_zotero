@@ -1,4 +1,28 @@
-# Traducir Tags al Español — Script para Zotero
+---
+tipo: readme
+estado: retirado
+---
+# traducir_tags_español/ — etiquetas de Zotero del inglés al español por diccionario (script «Run JavaScript», retirado)
+
+<!-- suite:inicio -->
+**Suite `traducir_tags_español`** · objetivo *biblioteca* · estado *retirado* · - · interfaz cli
+
+Traducía al español por diccionario las etiquetas en inglés de los ítems seleccionados de Zotero (script «Run JavaScript»); retirado, absorbido por sincronizar_zotero.
+
+- Escribe en: zotero · simula por defecto: no
+- Depende de: zotero
+- Nota: retirado el 2026-08-09 (auditoría, hallazgo A3): el vocabulario de etiquetas lo fija Calibre y lo propaga scripts_for_calibre/script_sincronizar_zotero («Calibre manda»), que la sustituye; se conserva como historia
+
+Comandos:
+
+```bash
+cat traducir_tags_español.js   # solo lectura: retirado, no pegar en Zotero
+```
+
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
+<!-- suite:fin -->
+
+> ⚠️ **Retirado el 2026-08-09** (auditoría, hallazgo A3 de `meta/diagnosticos/AUDITORIA.md`): el vocabulario de etiquetas lo fija Calibre y lo propaga `scripts_for_calibre/script_sincronizar_zotero` («Calibre manda»), que lo sustituye; ejecutarlo reintroduce divergencia que el sync nocturno revierte. No pegar en Zotero; se conserva como historia.
 
 Script de JavaScript para Zotero que **traduce automáticamente los tags
 (etiquetas) en inglés al español**, usando un diccionario interno

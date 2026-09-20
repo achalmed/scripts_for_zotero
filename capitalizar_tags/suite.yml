@@ -1,0 +1,14 @@
+# capitalizar_tags/suite.yml — suite capitalizar_tags: Ponía las etiquetas de los ítems seleccionados de Zotero en Título Capitalizado (script «Run JavaScript»); retirado, absorbido por sincronizar_zotero.
+# Contrato: core/suite.schema.yml; core/suites.py validar lo comprueba y generar escribe los índices y README.
+id: capitalizar_tags
+objetivo: biblioteca
+resumen: Ponía las etiquetas de los ítems seleccionados de Zotero en Título Capitalizado (script «Run JavaScript»); retirado, absorbido por sincronizar_zotero.
+escribe_en:
+- zotero
+simula_por_defecto: false
+comandos:
+- 'cat capitalizar_tags.js   # solo lectura: retirado, no pegar en Zotero'
+estado: retirado
+depende_de:
+- zotero
+nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): choca con la política de vocabulario «Calibre manda» de scripts_for_calibre/script_sincronizar_zotero, que la sustituye; se conserva como historia'

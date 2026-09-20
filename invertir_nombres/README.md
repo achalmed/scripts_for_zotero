@@ -1,4 +1,28 @@
-# Intercambio de Nombres y Apellidos — Script para Zotero
+---
+tipo: readme
+estado: retirado
+---
+# invertir_nombres/ — intercambio nombre ↔ apellido de los creadores en Zotero (script «Run JavaScript», retirado y peligroso)
+
+<!-- suite:inicio -->
+**Suite `invertir_nombres`** · objetivo *biblioteca* · estado *retirado* · - · interfaz cli
+
+Intercambiaba nombre y apellido de todos los creadores de los ítems seleccionados de Zotero (script «Run JavaScript»); retirado y peligroso, no ejecutar.
+
+- Escribe en: zotero · simula por defecto: no
+- Depende de: zotero
+- Nota: retirado el 2026-08-09 (auditoría, hallazgo A3): intercambio ciego de autores que rompe la comparación semántica de scripts_for_calibre/script_sincronizar_zotero (que tolera la inversión y convierte al cruzar) y dispara escrituras masivas de conflicto en el siguiente sync; se conserva como historia
+
+Comandos:
+
+```bash
+cat invertir_nombres.js   # solo lectura: retirado y peligroso, no pegar en Zotero
+```
+
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
+<!-- suite:fin -->
+
+> ⚠️ **Retirado el 2026-08-09 (auditoría, hallazgo A3 de `meta/diagnosticos/AUDITORIA.md`). NO EJECUTAR.** Es un intercambio ciego de nombre y apellido: rompe la comparación semántica de autores de `scripts_for_calibre/script_sincronizar_zotero` (que ya tolera la inversión y convierte el formato al cruzar) y dispara escrituras masivas de conflicto en el siguiente sync. Se conserva solo como historia.
 
 Script de JavaScript para Zotero que **intercambia los campos de nombre
 (`firstName`) y apellido (`lastName`)** de todos los creadores (autores,
@@ -77,15 +101,6 @@ del script:
 | Los cambios no se guardan | Verifica que tienes permisos de escritura en tu biblioteca. |
 | Script muy lento con muchos ítems | Selecciona menos ítems por ejecución (lotes de 100–500). |
 | Se intercambiaron nombres que no debían | Usa `Ctrl+Z` inmediatamente o restaura desde copia de seguridad. |
-
-## Mejoras futuras sugeridas
-
-- Opción de previsualización sin guardar.
-- Detección inteligente automática de qué campo es nombre y cuál apellido.
-- Soporte para sufijos (Jr., Sr., III, etc.).
-- Interfaz gráfica con botones de confirmación.
-- Exportar reporte de cambios a CSV.
-- Opción de deshacer cambios desde el mismo script.
 
 ## Autor
 

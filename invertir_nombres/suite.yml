@@ -1,0 +1,14 @@
+# invertir_nombres/suite.yml — suite invertir_nombres: Intercambiaba nombre y apellido de todos los creadores de los ítems seleccionados de Zotero (script «Run JavaScript»); retirado y peligroso, no ejecutar.
+# Contrato: core/suite.schema.yml; core/suites.py validar lo comprueba y generar escribe los índices y README.
+id: invertir_nombres
+objetivo: biblioteca
+resumen: Intercambiaba nombre y apellido de todos los creadores de los ítems seleccionados de Zotero (script «Run JavaScript»); retirado y peligroso, no ejecutar.
+escribe_en:
+- zotero
+simula_por_defecto: false
+comandos:
+- 'cat invertir_nombres.js   # solo lectura: retirado y peligroso, no pegar en Zotero'
+estado: retirado
+depende_de:
+- zotero
+nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): intercambio ciego de autores que rompe la comparación semántica de scripts_for_calibre/script_sincronizar_zotero (que tolera la inversión y convierte al cruzar) y dispara escrituras masivas de conflicto en el siguiente sync; se conserva como historia'

@@ -1,5 +1,8 @@
-#readme
-# Zotero PDF Metadata Embedder — v8.0
+---
+tipo: readme
+estado: retirado
+---
+# script_inscrustar_metadatos_pdf/ — incrustador de metadatos Zotero → PDF, retirado (Zotero PDF Metadata Embedder v8.0)
 
 <!-- suite:inicio -->
 **Suite `inscrustar_metadatos_pdf`** · objetivo *biblioteca* · estado *retirado* · - · interfaz cli
@@ -17,6 +20,8 @@ bash embed_pdf_metadata.sh <carpeta>
 
 <sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
 <!-- suite:fin -->
+
+> ⚠️ **Retirado el 2026-08-09** (auditoría, hallazgo A7 de `meta/diagnosticos/AUDITORIA.md`; `meta/diagnosticos/PLAN_MIGRACION.md`): el incrustador único es `scripts_for_calibre/script_metadatos_calibre` (OPF → InfoDict + XMP-dc con exiftool); su operación `limpiar-json` borra los `zotero_metadata.json` que este sembró bajo la biblioteca. No ejecutar; se conserva como historia.
 
 Sistema de dos scripts para exportar metadatos de Zotero e incrustarlos
 directamente en los archivos PDF de tu biblioteca, sin alterar el contenido
@@ -72,11 +77,8 @@ terminal normal, usa `exiftool` para hacer el trabajo real sobre los PDFs.
 **Herramientas necesarias:**
 
 ```bash
-# Instalar dependencias
-sudo pacman -S perl-image-exiftool jq
-
-# Opcional pero muy recomendado para bibliotecas grandes
-sudo pacman -S parallel
+sudo pacman -S perl-image-exiftool jq   # dependencias
+sudo pacman -S parallel                  # opcional, recomendado para bibliotecas grandes
 ```
 
 | Herramienta | Para qué se usa                                        |
@@ -141,7 +143,7 @@ biblioteca/
   "zoteroId": "3704",
   "exportedAt": "2025-01-15T10:30:00.000Z",
   "pdf_filename": "Ciclos economicos reales - Yulino, Anastacio Clemente.pdf",
-  "pdf_path": "/home/achalmaedison/Documents/biblioteca/Yulino, Anastacio Clemente/Ciclos economicos reales (3704)/Ciclos economicos reales - Yulino, Anastacio Clemente.pdf"
+  "pdf_path": "$BIBLIOTECA_DIR/Yulino, Anastacio Clemente/Ciclos economicos reales (3704)/Ciclos economicos reales - Yulino, Anastacio Clemente.pdf"
 }
 ```
 
@@ -247,14 +249,14 @@ bash ~/embed_pdf_metadata.sh \
 
 ```bash
 bash ~/embed_pdf_metadata.sh \
-  "/home/achalmaedison/Documents/biblioteca/Yulino, Anastacio Clemente" \
-  "/home/achalmaedison/Documents/biblioteca/Zenon, Quispe Misaico"
+  "$BIBLIOTECA_DIR/Yulino, Anastacio Clemente" \
+  "$BIBLIOTECA_DIR/Zenon, Quispe Misaico"
 ```
 
 ### Desde el directorio actual
 
 ```bash
-cd "/home/achalmaedison/Documents/biblioteca/Youel, Rojas Zea"
+cd "$BIBLIOTECA_DIR/Youel, Rojas Zea"
 bash ~/embed_pdf_metadata.sh
 # Procesa todos los zotero_metadata.json en la carpeta actual y subcarpetas
 ```
@@ -351,7 +353,7 @@ Después de ejecutar el script, verifica que los metadatos se incrustaron:
 ```bash
 # Campos básicos
 exiftool -Title -Author -Keywords -Description -Publisher \
-  "/home/achalmaedison/Documents/biblioteca/Yulino, Anastacio Clemente/Ciclos economicos reales (3704)/Ciclos economicos reales - Yulino, Anastacio Clemente.pdf"
+  "$BIBLIOTECA_DIR/Yulino, Anastacio Clemente/Ciclos economicos reales (3704)/Ciclos economicos reales - Yulino, Anastacio Clemente.pdf"
 
 # Todos los metadatos XMP
 exiftool -XMP:all <archivo.pdf>
@@ -470,7 +472,7 @@ Si actualizas metadatos en Zotero (corriges un título, agregas tags, etc.):
 2. Ejecuta el script JS → sobreescribe solo esos `zotero_metadata.json`.
 3. Ejecuta el script bash apuntando a la carpeta del autor específico:
    ```bash
-   bash ~/embed_pdf_metadata.sh "/home/achalmaedison/Documents/biblioteca/Yulino, Anastacio Clemente"
+   bash ~/embed_pdf_metadata.sh "$BIBLIOTECA_DIR/Yulino, Anastacio Clemente"
    ```
 
 ---
@@ -551,5 +553,5 @@ Nuevo modo --repair-only: repara los PDFs malformados sin tocar metadatos, útil
 
 ---
 
-_Generado para Archcraft x86_64 · Biblioteca: `/home/achalmaedison/Documents/biblioteca`_
+_Generado para Archcraft x86_64 · Biblioteca: `$BIBLIOTECA_DIR`_
 _Compatible con: Arch Linux, Manjaro, EndeavourOS y cualquier distro con pacman_
