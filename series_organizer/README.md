@@ -25,23 +25,23 @@ node --check series_organizer.js                       # solo sintaxis; el scrip
 <!-- suite:fin -->
 
 > El único script vivo de `scripts_for_zotero` (repo retirado el 2026-08-09, hallazgo A3 de
-> `meta/diagnosticos/AUDITORIA.md`). Es compatible con la sincronización Calibre ⇄ Zotero porque solo
-> reorganiza colecciones: no toca metadatos ni etiquetas. Se corre **después** de
+> `meta/diagnosticos/AUDITORIA.md`). Es compatible con la sincronización Calibre ⇄ Zotero porque
+> solo reorganiza colecciones: no toca metadatos ni etiquetas. Se corre **después** de
 > `scripts_for_calibre/script_sincronizar_zotero`, nunca antes.
 
 Script de JavaScript para Zotero (v2.0) que **organiza automáticamente los ítems de una colección en
 subcolecciones según su campo "Series"**. Por ejemplo, si tienes 10 libros de la serie "Economía
-Asiática", el script crea una subcolección llamada "Economía Asiática" dentro de tu colección principal
-y mueve ahí esos 10 ítems.
+Asiática", el script crea una subcolección llamada "Economía Asiática" dentro de tu colección
+principal y mueve ahí esos 10 ítems.
 
 ## Qué es
 
-Si importas tu biblioteca desde Calibre (u otra fuente que mantiene el campo "Series" en sus metadatos),
-terminas con cientos de ítems sueltos en una sola colección. Este script los reorganiza automáticamente
-en subcolecciones por serie, sin perder notas, anotaciones ni archivos adjuntos (porque mueve el ítem
-padre completo, no toca sus hijos individualmente). En esta biblioteca la serie de Calibre llega a Zotero
-por el sync (`series` en el ítem; `publicationTitle` en artículos), así que el script solo tiene sentido
-sobre una colección ya sincronizada.
+Si importas tu biblioteca desde Calibre (u otra fuente que mantiene el campo "Series" en sus
+metadatos), terminas con cientos de ítems sueltos en una sola colección. Este script los reorganiza
+automáticamente en subcolecciones por serie, sin perder notas, anotaciones ni archivos adjuntos
+(porque mueve el ítem padre completo, no toca sus hijos individualmente). En esta biblioteca la
+serie de Calibre llega a Zotero por el sync (`series` en el ítem; `publicationTitle` en artículos),
+así que el script solo tiene sentido sobre una colección ya sincronizada.
 
 Requisitos: Zotero 6 o superior con la consola de Ejecutar JavaScript habilitada; ningún plugin
 adicional; una colección existente cuyo nombre coincida con `CONFIG.nombreColeccionPrincipal` (por
@@ -50,11 +50,18 @@ defecto `"Calibre"`).
 ## Uso
 
 ```bash
-cat series_organizer.js | xclip -selection clipboard   # copiar el script al portapapeles (o abrirlo y copiarlo)
-node --check series_organizer.js                       # comprobar la sintaxis tras editarlo (no lo ejecuta)
+cat series_organizer.js | xclip -selection clipboard   # copiar el script al portapapeles
+node -e 'const A=Object.getPrototypeOf(async function(){}).constructor;
+  new A(require("fs").readFileSync(process.argv[1],"utf8")); console.log("sintaxis ok")' \
+  series_organizer.js                                  # sintaxis tras editarlo; no lo ejecuta
 ```
 
-1. Abre Zotero y haz una copia de seguridad (Archivo → Exportar biblioteca → Zotero RDF con archivos).
+`node --check` no sirve: el script termina en un `return await` de nivel superior, que la consola de
+Zotero acepta porque envuelve el código en una función asíncrona y Node rechaza. La orden de arriba
+hace lo mismo que Zotero, construir esa función, sin llamarla.
+
+1. Abre Zotero y haz una copia de seguridad (Archivo → Exportar biblioteca → Zotero RDF con
+   archivos).
 2. Ve a **Herramientas → Desarrollador → Ejecutar JavaScript**.
 3. Pega el contenido completo de `series_organizer.js`.
 4. **Antes de ejecutar**, revisa y ajusta la sección `CONFIG` al inicio del script (tabla de abajo);
@@ -75,24 +82,25 @@ node --check series_organizer.js                       # comprobar la sintaxis t
 
 ### Flujo del script (4 fases)
 
-1. **Recopilación de elementos**: obtiene todos los ítems "regulares" (no notas ni adjuntos sueltos) de
-   la colección principal.
-2. **Agrupación por series**: lee el campo `series` de cada ítem y los agrupa en un mapa en memoria por
-   nombre de serie.
+1. **Recopilación de elementos**: obtiene todos los ítems "regulares" (no notas ni adjuntos sueltos)
+   de la colección principal.
+2. **Agrupación por series**: lee el campo `series` de cada ítem y los agrupa en un mapa en memoria
+   por nombre de serie.
 3. **Creación/actualización de subcolecciones**: por cada serie única, busca si ya existe una
    subcolección con ese nombre; si no existe, la crea. Luego mueve (o copia, según
    `mantenerEnColeccionPrincipal`) los ítems correspondientes.
-4. **Verificación final**: cuenta cuántos elementos quedaron en cada subcolección y cuántos permanecen
-   en la colección principal, para que puedas confirmar que el proceso se completó correctamente.
+4. **Verificación final**: cuenta cuántos elementos quedaron en cada subcolección y cuántos
+   permanecen en la colección principal, para que puedas confirmar que el proceso se completó
+   correctamente.
 
 Al final se imprime un resumen con tiempo total de ejecución, número de series procesadas,
 subcolecciones creadas/reutilizadas, elementos movidos, elementos sin serie y errores encontrados.
 
 ## Estructura
 
-`series_organizer.js` (todo el script: cabecera, `CONFIG`, las cuatro fases y el resumen) · `suite.yml`
-(manifiesto) · este README. Sin `main.sh`, `config` ni `lib/`: la configuración es el bloque `CONFIG`
-dentro del propio script.
+`series_organizer.js` (todo el script: cabecera, `CONFIG`, las cuatro fases y el resumen) ·
+`suite.yml` (manifiesto) · este README. Sin `main.sh`, `config` ni `lib/`: la configuración es el
+bloque `CONFIG` dentro del propio script.
 
 ## Solución de problemas
 
@@ -106,11 +114,15 @@ dentro del propio script.
 ## Límite honesto
 
 - **Modifica permanentemente la estructura de colecciones**; no hay deshacer: la copia de seguridad
-  previa es la única vuelta atrás, y el proceso es reversible solo a mano (mover los ítems de vuelta).
-- **`modoSimulacion` es `false` por defecto**: la simulación hay que pedirla editando el script; también
-  puede combinarse `modoSimulacion: false` con `limitePrueba: 10` para un ensayo real acotado.
-- **Solo agrupa por el campo `series` del ítem**: los ítems sin serie se cuentan y se dejan donde están;
-  no infiere series desde el título ni desde Calibre.
-- **No se ejecuta fuera de Zotero**: `node --check` comprueba la sintaxis, nada más; no hay timer, ni
-  `--dry-run`, ni lo invoca ninguna otra suite.
-- **Una transacción por ítem**: lento en colecciones grandes; no es seguro lanzarlo dos veces a la vez.
+  previa es la única vuelta atrás, y el proceso es reversible solo a mano (mover los ítems de
+  vuelta).
+- **`modoSimulacion` es `false` por defecto**: la simulación hay que pedirla editando el script;
+  también puede combinarse `modoSimulacion: false` con `limitePrueba: 10` para un ensayo real
+  acotado.
+- **Solo agrupa por el campo `series` del ítem**: los ítems sin serie se cuentan y se dejan donde
+  están; no infiere series desde el título ni desde Calibre.
+- **No se ejecuta fuera de Zotero**: fuera de él solo se comprueba la sintaxis (Uso); no hay timer,
+  ni `--dry-run`, ni lo invoca ninguna otra suite. El comando `node --check` del bloque generado de
+  arriba falla por el `return await` final (pendiente en `../docs/decisiones.md`).
+- **Transacciones por ítem** (añadir a la subcolección y, si se mueve, quitar de la principal):
+  lento en colecciones grandes; no es seguro lanzarlo dos veces a la vez.
