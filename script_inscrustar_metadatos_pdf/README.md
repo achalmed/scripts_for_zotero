@@ -10,15 +10,15 @@ estado: retirado
 Exporta metadatos de Zotero (JS) y los incrusta en los PDF; sustituido por metadatos_calibre (incrustador único con XMP).
 
 - Escribe en: archivos · simula por defecto: no
-- Nota: scripts_for_zotero está deprecado; se conserva como historia
+- Nota: retirado: lo sustituye scripts_for_calibre/script_metadatos_calibre, el incrustador único con XMP; se conserva como historia
 
 Comandos:
 
 ```bash
-bash embed_pdf_metadata.sh <carpeta>
+cat embed_pdf_metadata.sh   # retirado: se lee, no se ejecuta (reescribe los PDF)
 ```
 
-<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-10-04); no se edita a mano.</sub>
 <!-- suite:fin -->
 
 **Retirado; no se ejecuta.** Exportaba los metadatos de Zotero a un `zotero_metadata.json` junto a

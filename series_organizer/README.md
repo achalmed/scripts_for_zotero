@@ -18,10 +18,10 @@ Comandos:
 
 ```bash
 cat series_organizer.js | xclip -selection clipboard   # al portapapeles; pegar en Zotero → Herramientas → Desarrollador → Ejecutar JavaScript
-node --check series_organizer.js                       # solo sintaxis; el script solo corre dentro de Zotero
+node -e 'const A=Object.getPrototypeOf(async function(){}).constructor; new A(require("fs").readFileSync(process.argv[1],"utf8")); console.log("sintaxis ok")' series_organizer.js   # solo sintaxis, como la consola de Zotero; node --check no sirve
 ```
 
-<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-10-04); no se edita a mano.</sub>
 <!-- suite:fin -->
 
 > El único script vivo de `scripts_for_zotero` (repo retirado el 2026-08-09, hallazgo A3 de

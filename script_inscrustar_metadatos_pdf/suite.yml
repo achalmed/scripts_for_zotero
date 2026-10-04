@@ -7,6 +7,6 @@ escribe_en:
 - archivos
 simula_por_defecto: false
 comandos:
-- bash embed_pdf_metadata.sh <carpeta>
+- 'cat embed_pdf_metadata.sh   # retirado: se lee, no se ejecuta (reescribe los PDF)'
 estado: retirado
-nota: scripts_for_zotero está deprecado; se conserva como historia
+nota: 'retirado: lo sustituye scripts_for_calibre/script_metadatos_calibre, el incrustador único con XMP; se conserva como historia'
