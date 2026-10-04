@@ -78,9 +78,6 @@ construye la función asíncrona como Zotero sin llamarla. Un cambio de lógica 
 - **La carpeta `traducir_tags_español` lleva tilde**: en `git ls-files` sale escapada
   (`traducir_tags_espa\303\261ol`); es la misma carpeta. Su manual en `docs/historial/` va sin
   tilde.
-- **Dos `suite.yml` anuncian comandos que no deben usarse** (`embed_pdf_metadata.sh` y
-  `node --check`): pendientes en `docs/decisiones.md`; corregirlos exige regenerar todos los
-  bloques del workspace.
 
 ## Dónde está cada cosa
 

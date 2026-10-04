@@ -124,7 +124,6 @@ bloque `CONFIG` dentro del propio script.
   están; no infiere series desde el título ni desde Calibre. Los artículos sincronizados llevan la
   serie en `publicationTitle`, que el script no lee: quedan siempre sin serie.
 - **No se ejecuta fuera de Zotero**: fuera de él solo se comprueba la sintaxis (Uso); no hay timer,
-  ni `--dry-run`, ni lo invoca ninguna otra suite. El comando `node --check` del bloque generado de
-  arriba falla por el `return await` final (pendiente en `../docs/decisiones.md`).
+  ni `--dry-run`, ni lo invoca ninguna otra suite.
 - **Transacciones por ítem** (añadir a la subcolección y, si se mueve, quitar de la principal):
   lento en colecciones grandes; no es seguro lanzarlo dos veces a la vez.

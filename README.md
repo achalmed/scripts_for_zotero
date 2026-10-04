@@ -90,6 +90,6 @@ Cada carpeta retirada conserva su script y un README de una línea que remite a 
   transacciones por ítem: lento en colecciones grandes y reversible solo a mano.
 - **`node --check` no sirve para comprobarlo**: el script termina en un `return await` de nivel
   superior, válido en la consola de Zotero y error de sintaxis en Node; la comprobación que vale
-  está en `CLAUDE.md`.
+  está en `series_organizer/README.md` §Uso.
 - **Los scripts retirados no se mantienen ni se prueban** contra versiones nuevas de Zotero.
 - **Licencia MIT** (`LICENSE`), como el resto del código del ecosistema.

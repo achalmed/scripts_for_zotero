@@ -48,14 +48,13 @@ Cada uno con la fecha en que se anotó y su dueño.
 
 - ~~**Sin archivo `LICENSE`**~~ *Cerrado el 2026-10-04 por decisión del autor:* MIT (`LICENSE`), como
   el resto del código del ecosistema; el repo sigue público. (anotado 2026-10-03)
-- **`script_inscrustar_metadatos_pdf/suite.yml`** anuncia como comando
-  `bash embed_pdf_metadata.sh <carpeta>`, una orden ejecutable de un script retirado, y su `nota` no
-  dice fecha ni sustituto, a diferencia de las otras tres retiradas. Corregirlo y regenerar con
-  `core/suites.py generar --aplicar` (que reescribe todos los bloques del workspace).
-  (anotado 2026-10-03 · dueño: orquestador de la regeneración global)
-- **`series_organizer/suite.yml`** anuncia `node --check series_organizer.js`, que falla: el
-  `return await` final es válido en la consola de Zotero, no en Node. Sustituirlo por la
-  comprobación de `CLAUDE.md`. (anotado 2026-10-03 · dueño: orquestador de la regeneración global)
+- ~~**`script_inscrustar_metadatos_pdf/suite.yml`** anuncia como comando
+  `bash embed_pdf_metadata.sh <carpeta>`~~ *Cerrado el 2026-10-04 (regeneración global de los
+  manifiestos):* el comando es ahora `cat embed_pdf_metadata.sh` (solo lectura) y la `nota` nombra al
+  sustituto; sigue sin fecha de retiro, a diferencia de las otras tres. (anotado 2026-10-03)
+- ~~**`series_organizer/suite.yml`** anuncia `node --check series_organizer.js`~~ *Cerrado el
+  2026-10-04 (regeneración global):* el manifiesto y el bloque traen la comprobación de sintaxis que
+  construye la función asíncrona como Zotero (`series_organizer/README.md` §Uso). (anotado 2026-10-03)
 - **Un comentario de `script_inscrustar_metadatos_pdf/embed_pdf_metadata.sh` trae una ruta absoluta
   de la máquina** en un repo público. Quitarla o sustituirla por `$BIBLIOTECA_DIR`.
   (anotado 2026-10-04 · dueño: autor)
