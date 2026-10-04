@@ -41,7 +41,8 @@ metadatos), terminas con cientos de ítems sueltos en una sola colección. Este 
 automáticamente en subcolecciones por serie, sin perder notas, anotaciones ni archivos adjuntos
 (porque mueve el ítem padre completo, no toca sus hijos individualmente). En esta biblioteca la
 serie de Calibre llega a Zotero por el sync (`series` en el ítem; `publicationTitle` en artículos),
-así que el script solo tiene sentido sobre una colección ya sincronizada.
+así que el script solo tiene sentido sobre una colección ya sincronizada (el contrato del sync,
+en `scripts_for_calibre/script_sincronizar_zotero/README.md`).
 
 Requisitos: Zotero 6 o superior con la consola de Ejecutar JavaScript habilitada; ningún plugin
 adicional; una colección existente cuyo nombre coincida con `CONFIG.nombreColeccionPrincipal` (por
@@ -120,7 +121,8 @@ bloque `CONFIG` dentro del propio script.
   también puede combinarse `modoSimulacion: false` con `limitePrueba: 10` para un ensayo real
   acotado.
 - **Solo agrupa por el campo `series` del ítem**: los ítems sin serie se cuentan y se dejan donde
-  están; no infiere series desde el título ni desde Calibre.
+  están; no infiere series desde el título ni desde Calibre. Los artículos sincronizados llevan la
+  serie en `publicationTitle`, que el script no lee: quedan siempre sin serie.
 - **No se ejecuta fuera de Zotero**: fuera de él solo se comprueba la sintaxis (Uso); no hay timer,
   ni `--dry-run`, ni lo invoca ninguna otra suite. El comando `node --check` del bloque generado de
   arriba falla por el `return await` final (pendiente en `../docs/decisiones.md`).

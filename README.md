@@ -4,7 +4,7 @@ estado: activo
 ---
 # scripts_for_zotero/ — scripts «Run JavaScript» para Zotero, repo retirado salvo `series_organizer`
 
-> **Deprecado.** Lo sustituye `scripts_for_calibre/`: `script_sincronizar_zotero` lleva los
+> **Retirado.** Lo sustituye `scripts_for_calibre/`: `script_sincronizar_zotero` lleva los
 > metadatos y las etiquetas de Calibre a Zotero («Calibre manda») y `script_metadatos_calibre` es
 > el incrustador único de metadatos en PDF. Aquí solo sigue vivo `series_organizer/`; los demás
 > scripts **no se ejecutan** (`meta/diagnosticos/AUDITORIA.md`, hallazgos A3 y A7).
@@ -35,8 +35,8 @@ subcolecciones por el campo *Series* y se corre a mano **después** de un sync.
 verdad de los metadatos vive en Calibre (`biblioteca/`) y llega a Zotero por
 `scripts_for_calibre/script_sincronizar_zotero`, que corre cada noche desde el timer
 `ecosistema-metadatos` de `scripts_for_calibre/script_ecosistema_lectura`; el contrato global está
-en `meta/MODELO_METADATOS.md` y `meta/SINCRONIZACION.md`. Del workspace solo depende de `core/`,
-por el contrato de suites.
+en `meta/MODELO_METADATOS.md` y `meta/SINCRONIZACION.md`. No carga nada de `core/`: sus `suite.yml` solo
+cumplen el contrato que valida `core/suites.py`.
 
 ## Uso
 

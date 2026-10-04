@@ -44,11 +44,19 @@ línea que remite al sustituto; el manual de uso de cada una pasó a `historial/
 
 ## Pendientes
 
+Cada uno con la fecha en que se anotó y su dueño.
+
+- **Sin archivo `LICENSE`** en un repo de remoto público. Pregunta al autor: ¿qué licencia lleva
+  (MIT, como el resto del código del ecosistema), o se pasa el repo a privado, ya que está retirado?
+  Ningún asistente la elige ni la crea. (anotado 2026-10-03 · dueño: autor)
 - **`script_inscrustar_metadatos_pdf/suite.yml`** anuncia como comando
   `bash embed_pdf_metadata.sh <carpeta>`, una orden ejecutable de un script retirado, y su `nota` no
   dice fecha ni sustituto, a diferencia de las otras tres retiradas. Corregirlo y regenerar con
   `core/suites.py generar --aplicar` (que reescribe todos los bloques del workspace).
+  (anotado 2026-10-03 · dueño: orquestador de la regeneración global)
 - **`series_organizer/suite.yml`** anuncia `node --check series_organizer.js`, que falla: el
   `return await` final es válido en la consola de Zotero, no en Node. Sustituirlo por la
-  comprobación de `CLAUDE.md`.
-- **Sin archivo `LICENSE`** en un repo de remoto público.
+  comprobación de `CLAUDE.md`. (anotado 2026-10-03 · dueño: orquestador de la regeneración global)
+- **Un comentario de `script_inscrustar_metadatos_pdf/embed_pdf_metadata.sh` trae una ruta absoluta
+  de la máquina** en un repo público. Quitarla o sustituirla por `$BIBLIOTECA_DIR`.
+  (anotado 2026-10-04 · dueño: autor)

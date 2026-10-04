@@ -6,8 +6,8 @@ estado: activo
 
 Guía para el asistente. En español, como todo el ecosistema. `AGENTS.md` es un enlace a este
 archivo.
-**Repo deprecado salvo `series_organizer/`; lo sustituye `scripts_for_calibre/`.** Léase antes:
-`README.md`, `docs/decisiones.md` (qué se retiró, por qué y qué está pendiente),
+**Repo retirado salvo `series_organizer/`; lo sustituye `scripts_for_calibre/`.** Léase antes:
+`README.md`, `docs/README.md`, `docs/decisiones.md` (qué se retiró, por qué y qué está pendiente),
 `series_organizer/README.md` y `scripts_for_calibre/script_sincronizar_zotero/README.md` (la
 política que absorbió a estos scripts).
 
@@ -30,9 +30,22 @@ política que absorbió a estos scripts).
   un README de una línea; el manual de uso está en `docs/historial/`. No se borra.
 - **Lo generado no se edita**: los bloques `suite:`/`suites:` de los README (los escribe
   `core/suites.py generar --aplicar`) y el bloque `docs:` de `docs/README.md`
-  (`core/docs.py indice`). Una decisión nueva va a `docs/decisiones.md`, nunca a un `.md` por
-  sesión.
+  (`core/docs.py indice`).
 - **Sin rutas de máquina** (`/home/…`) en docs ni scripts; nada del despacho.
+- **Dónde va cada cosa nueva.** En la raíz solo `README.md`, `CLAUDE.md`, `AGENTS.md`, `.gitignore`
+  y, cuando el autor la decida, `LICENSE` (NORMATIVA §15.11); los manifiestos son por carpeta
+  (`<carpeta>/suite.yml`). Cualquier otro `.md` en la raíz está fuera de lugar.
+
+  | lo que apareció | va a | nunca a |
+  |---|---|---|
+  | cómo se usa `series_organizer` | `series_organizer/README.md` | el README raíz |
+  | qué hacía un script retirado | `docs/historial/` (no se edita) | la carpeta del script |
+  | una transformación nueva de Zotero | una regla de `script_sincronizar_zotero` | un script nuevo aquí |
+  | por qué se decidió algo; un pendiente | `docs/decisiones.md` (§Pendientes con fecha y dueño) | un `NOTAS.md` o `TODO.md` |
+  | lo que se hizo en la sesión | el mensaje de commit | un `.md` con fecha o de sesión |
+
+  Lo que hiciste en esta sesión va al mensaje de commit, no a un archivo. Si nada encaja, pregunta
+  antes de crear un documento.
 
 ## Cómo se verifica un cambio
 
