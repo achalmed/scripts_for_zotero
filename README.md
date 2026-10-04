@@ -92,4 +92,4 @@ Cada carpeta retirada conserva su script y un README de una línea que remite a 
   superior, válido en la consola de Zotero y error de sintaxis en Node; la comprobación que vale
   está en `CLAUDE.md`.
 - **Los scripts retirados no se mantienen ni se prueban** contra versiones nuevas de Zotero.
-- **No hay archivo `LICENSE`** en el repo, aunque el remoto es público.
+- **Licencia MIT** (`LICENSE`), como el resto del código del ecosistema.

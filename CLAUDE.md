@@ -33,7 +33,7 @@ política que absorbió a estos scripts).
   (`core/docs.py indice`).
 - **Sin rutas de máquina** (`/home/…`) en docs ni scripts; nada del despacho.
 - **Dónde va cada cosa nueva.** En la raíz solo `README.md`, `CLAUDE.md`, `AGENTS.md`, `.gitignore`
-  y, cuando el autor la decida, `LICENSE` (NORMATIVA §15.11); los manifiestos son por carpeta
+  y `LICENSE` (NORMATIVA §15.11); los manifiestos son por carpeta
   (`<carpeta>/suite.yml`). Cualquier otro `.md` en la raíz está fuera de lugar.
 
   | lo que apareció | va a | nunca a |

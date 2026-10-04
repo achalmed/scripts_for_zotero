@@ -46,9 +46,8 @@ línea que remite al sustituto; el manual de uso de cada una pasó a `historial/
 
 Cada uno con la fecha en que se anotó y su dueño.
 
-- **Sin archivo `LICENSE`** en un repo de remoto público. Pregunta al autor: ¿qué licencia lleva
-  (MIT, como el resto del código del ecosistema), o se pasa el repo a privado, ya que está retirado?
-  Ningún asistente la elige ni la crea. (anotado 2026-10-03 · dueño: autor)
+- ~~**Sin archivo `LICENSE`**~~ *Cerrado el 2026-10-04 por decisión del autor:* MIT (`LICENSE`), como
+  el resto del código del ecosistema; el repo sigue público. (anotado 2026-10-03)
 - **`script_inscrustar_metadatos_pdf/suite.yml`** anuncia como comando
   `bash embed_pdf_metadata.sh <carpeta>`, una orden ejecutable de un script retirado, y su `nota` no
   dice fecha ni sustituto, a diferencia de las otras tres retiradas. Corregirlo y regenerar con
