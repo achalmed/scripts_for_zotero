@@ -83,7 +83,7 @@ construye la función asíncrona como Zotero sin llamarla. Un cambio de lógica 
 
 | pregunta | documento |
 |---|---|
-| qué se retiró, cuándo, por qué; lo pendiente | `docs/decisiones.md`, `meta/diagnosticos/AUDITORIA.md` (A3, A7) |
+| qué se retiró, cuándo, por qué; lo pendiente | `docs/decisiones.md`, `meta/docs/historial/diagnosticos/AUDITORIA.md` (A3, A7) |
 | cómo usar el único script vivo | `series_organizer/README.md` |
 | qué hacía un script retirado | `docs/historial/` |
 | la política que sustituye a los scripts | `scripts_for_calibre/script_sincronizar_zotero/README.md` |

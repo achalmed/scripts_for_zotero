@@ -14,7 +14,7 @@ final.
 Las transformaciones de etiquetas y de nombres quedaron absorbidas por
 `scripts_for_calibre/script_sincronizar_zotero`, que lleva a Zotero lo que fija Calibre («Calibre
 manda») con copia, bloqueo y comprobación de integridad. Ejecutar los scripts sueltos reintroduce
-divergencia que el sync nocturno revierte o amplifica (`meta/diagnosticos/AUDITORIA.md`, A3).
+divergencia que el sync nocturno revierte o amplifica (`meta/docs/historial/diagnosticos/AUDITORIA.md`, A3).
 Retirados: `capitalizar_tags/`, `traducir_tags_español/` e `invertir_nombres/`; este último es el
 peor caso, porque su intercambio ciego de nombre y apellido rompe la comparación de autores por
 tokens del sync y dispara escrituras masivas de conflicto.
@@ -24,7 +24,7 @@ tokens del sync y dispara escrituras masivas de conflicto.
 Dos incrustadores con mapeos divergentes reescribían los mismos PDF. El canónico es
 `scripts_for_calibre/script_metadatos_calibre` (desde el OPF de Calibre), que absorbió el mapeo XMP
 de `script_inscrustar_metadatos_pdf/`; este queda retirado, y su operación `limpiar-json` retira los
-`zotero_metadata.json` que el viejo sembraba (`meta/diagnosticos/AUDITORIA.md`, A7).
+`zotero_metadata.json` que el viejo sembraba (`meta/docs/historial/diagnosticos/AUDITORIA.md`, A7).
 
 ## 3. `series_organizer` sigue vivo, después del sync (2026-08-09)
 

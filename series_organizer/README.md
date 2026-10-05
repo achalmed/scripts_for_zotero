@@ -25,7 +25,7 @@ node -e 'const A=Object.getPrototypeOf(async function(){}).constructor; new A(re
 <!-- suite:fin -->
 
 > El único script vivo de `scripts_for_zotero` (repo retirado el 2026-08-09, hallazgo A3 de
-> `meta/diagnosticos/AUDITORIA.md`). Es compatible con la sincronización Calibre ⇄ Zotero porque
+> `meta/docs/historial/diagnosticos/AUDITORIA.md`). Es compatible con la sincronización Calibre ⇄ Zotero porque
 > solo reorganiza colecciones: no toca metadatos ni etiquetas. Se corre **después** de
 > `scripts_for_calibre/script_sincronizar_zotero`, nunca antes.
 
