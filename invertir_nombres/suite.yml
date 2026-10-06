@@ -11,4 +11,4 @@ comandos:
 estado: retirado
 depende_de:
 - zotero
-nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): intercambio ciego de autores que rompe la comparación semántica de scripts_for_calibre/script_sincronizar_zotero (que tolera la inversión y convierte al cruzar) y dispara escrituras masivas de conflicto en el siguiente sync; se conserva como historia'
+nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): intercambio ciego de autores que rompe la comparación semántica de scripts-biblioteca/script_sincronizar_zotero (que tolera la inversión y convierte al cruzar) y dispara escrituras masivas de conflicto en el siguiente sync; se conserva como historia'

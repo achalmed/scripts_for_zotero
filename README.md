@@ -4,7 +4,7 @@ estado: activo
 ---
 # scripts_for_zotero/ — scripts «Run JavaScript» para Zotero, repo retirado salvo `series_organizer`
 
-> **Retirado.** Lo sustituye `scripts_for_calibre/`: `script_sincronizar_zotero` lleva los
+> **Retirado.** Lo sustituye `scripts-biblioteca/`: `script_sincronizar_zotero` lleva los
 > metadatos y las etiquetas de Calibre a Zotero («Calibre manda») y `script_metadatos_calibre` es
 > el incrustador único de metadatos en PDF. Aquí solo sigue vivo `series_organizer/`; los demás
 > scripts **no se ejecutan** (`meta/docs/historial/diagnosticos/AUDITORIA.md`, hallazgos A3 y A7).
@@ -33,8 +33,8 @@ subcolecciones por el campo *Series* y se corre a mano **después** de un sync.
 
 **No es** parte del flujo del ecosistema: nada aquí corre por timer ni lo invoca otra suite. La
 verdad de los metadatos vive en Calibre (`biblioteca/`) y llega a Zotero por
-`scripts_for_calibre/script_sincronizar_zotero`, que corre cada noche desde el timer
-`ecosistema-metadatos` de `scripts_for_calibre/script_ecosistema_lectura`; el contrato global está
+`scripts-biblioteca/script_sincronizar_zotero`, que corre cada noche desde el timer
+`ecosistema-metadatos` de `scripts-biblioteca/script_ecosistema_lectura`; el contrato global está
 en `meta/docs/historial/MODELO_METADATOS.md` y `meta/docs/historial/SINCRONIZACION.md`. No carga nada de `core/`: sus `suite.yml` solo
 cumplen el contrato que valida `core/suites.py`.
 
@@ -76,7 +76,7 @@ Cada carpeta retirada conserva su script y un README de una línea que remite a 
 | `docs/decisiones.md` | por qué se retiró cada cosa, qué sigue vivo y qué está pendiente |
 | `docs/historial/` | el manual de cada script retirado, para leer qué lógica aplicaba |
 | `CLAUDE.md` | reglas para el asistente: qué no se ejecuta y cómo se verifica |
-| `scripts_for_calibre/script_sincronizar_zotero/README.md` | la política que absorbió a estos scripts |
+| `scripts-biblioteca/script_sincronizar_zotero/README.md` | la política que absorbió a estos scripts |
 | `meta/INDICE_SCRIPTS.md` | las suites de este repo entre las del workspace (generado) |
 
 ## Límite honesto

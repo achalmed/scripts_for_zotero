@@ -14,7 +14,7 @@ para ejecutarlo.
 |---|---|
 | **quien organiza su biblioteca** (usa `series_organizer`) | [`../README.md`](../README.md) → [`../series_organizer/README.md`](../series_organizer/README.md) |
 | **quien busca un script viejo** | [decisiones.md](decisiones.md) (qué lo sustituye) → [historial/](historial/README.md) |
-| **quien mantiene** (el repo o el sync que lo sustituye) | [`../CLAUDE.md`](../CLAUDE.md) → [decisiones.md](decisiones.md) → `scripts_for_calibre/script_sincronizar_zotero/README.md` |
+| **quien mantiene** (el repo o el sync que lo sustituye) | [`../CLAUDE.md`](../CLAUDE.md) → [decisiones.md](decisiones.md) → `scripts-biblioteca/script_sincronizar_zotero/README.md` |
 
 ## Cómo se mantiene
 

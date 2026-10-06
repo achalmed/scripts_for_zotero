@@ -11,7 +11,7 @@ Traducía al español por diccionario las etiquetas en inglés de los ítems sel
 
 - Escribe en: zotero · simula por defecto: no
 - Depende de: zotero
-- Nota: retirado el 2026-08-09 (auditoría, hallazgo A3): el vocabulario de etiquetas lo fija Calibre y lo propaga scripts_for_calibre/script_sincronizar_zotero («Calibre manda»), que la sustituye; se conserva como historia
+- Nota: retirado el 2026-08-09 (auditoría, hallazgo A3): el vocabulario de etiquetas lo fija Calibre y lo propaga scripts-biblioteca/script_sincronizar_zotero («Calibre manda»), que la sustituye; se conserva como historia
 
 Comandos:
 
@@ -19,10 +19,10 @@ Comandos:
 cat traducir_tags_español.js   # solo lectura: retirado, no pegar en Zotero
 ```
 
-<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-09-20); no se edita a mano.</sub>
+<sub>Bloque generado desde `suite.yml` por `core/suites.py generar` (2026-10-06); no se edita a mano.</sub>
 <!-- suite:fin -->
 
 **Retirado; no se pega en Zotero.** Traducía por diccionario las etiquetas en inglés de los ítems
 seleccionados. El vocabulario de etiquetas lo fija Calibre y lo propaga
-`scripts_for_calibre/script_sincronizar_zotero` («Calibre manda»), que lo sustituye. El manual que
+`scripts-biblioteca/script_sincronizar_zotero` («Calibre manda»), que lo sustituye. El manual que
 lo acompañaba se conserva en `../docs/historial/traducir-tags-espanol.md`.

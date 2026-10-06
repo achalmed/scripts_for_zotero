@@ -11,4 +11,4 @@ comandos:
 estado: retirado
 depende_de:
 - zotero
-nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): choca con la política de vocabulario «Calibre manda» de scripts_for_calibre/script_sincronizar_zotero, que la sustituye; se conserva como historia'
+nota: 'retirado el 2026-08-09 (auditoría, hallazgo A3): choca con la política de vocabulario «Calibre manda» de scripts-biblioteca/script_sincronizar_zotero, que la sustituye; se conserva como historia'

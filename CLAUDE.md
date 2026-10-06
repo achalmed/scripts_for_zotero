@@ -6,17 +6,17 @@ estado: activo
 
 Guía para el asistente. En español, como todo el ecosistema. `AGENTS.md` es un enlace a este
 archivo.
-**Repo retirado salvo `series_organizer/`; lo sustituye `scripts_for_calibre/`.** Léase antes:
+**Repo retirado salvo `series_organizer/`; lo sustituye `scripts-biblioteca/`.** Léase antes:
 `README.md`, `docs/README.md`, `docs/decisiones.md` (qué se retiró, por qué y qué está pendiente),
-`series_organizer/README.md` y `scripts_for_calibre/script_sincronizar_zotero/README.md` (la
+`series_organizer/README.md` y `scripts-biblioteca/script_sincronizar_zotero/README.md` (la
 política que absorbió a estos scripts).
 
 ## Reglas que no se negocian
 
 - **Vivo solo `series_organizer/series_organizer.js`.** Retirados: `capitalizar_tags/`,
   `traducir_tags_español/`, `invertir_nombres/` (absorbidos por
-  `scripts_for_calibre/script_sincronizar_zotero`) y `script_inscrustar_metadatos_pdf/` (absorbido
-  por `scripts_for_calibre/script_metadatos_calibre`).
+  `scripts-biblioteca/script_sincronizar_zotero`) y `script_inscrustar_metadatos_pdf/` (absorbido
+  por `scripts-biblioteca/script_metadatos_calibre`).
 - **No se ejecuta ningún script retirado, ni en pruebas**, ni nada que toque `zotero.sqlite` desde
   el asistente. Reintroducen divergencia que el timer `ecosistema-metadatos` revierte o amplifica;
   `invertir_nombres.js` es el peor caso: rompe la comparación de autores del sync y dispara
@@ -86,6 +86,6 @@ construye la función asíncrona como Zotero sin llamarla. Un cambio de lógica 
 | qué se retiró, cuándo, por qué; lo pendiente | `docs/decisiones.md`, `meta/docs/historial/diagnosticos/AUDITORIA.md` (A3, A7) |
 | cómo usar el único script vivo | `series_organizer/README.md` |
 | qué hacía un script retirado | `docs/historial/` |
-| la política que sustituye a los scripts | `scripts_for_calibre/script_sincronizar_zotero/README.md` |
-| el incrustador vigente de PDF | `scripts_for_calibre/script_metadatos_calibre/README.md` |
+| la política que sustituye a los scripts | `scripts-biblioteca/script_sincronizar_zotero/README.md` |
+| el incrustador vigente de PDF | `scripts-biblioteca/script_metadatos_calibre/README.md` |
 | el contrato de suite y el índice | `core/suite.schema.yml`, `meta/INDICE_SCRIPTS.md` |
